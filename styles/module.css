@@ -4,7 +4,7 @@ body {
 
 .banner__container {
   background-color: #486F88;
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   border-bottom: 0px;
   border-radius: 0px;
   text-align: center;
@@ -40,28 +40,49 @@ body {
 }
 
 .content {
-  height: 750px;
+  height: 850px;
   background-color: #123752;
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   border-radius: 0px;
-  font-size: 1em;
   font-color: #000000;
+}
 
+.content__text {
+  background-color: #486F88;
+  border: 1px solid #000000;
+  font-size: 1.3em;
+  line-height: 150%;
+  margin-top: 25px;
+  padding: 10px;
+  text-indent: 20px;
+  white-space: pre-line;
 }
 
 .content__calculator {
   background-color: #486F88;
   border: 1px solid #000000;
   height: 300px;
+  line-height: 150%;
   margin-top: 25px;
+  padding-top: 25px;
+  text-align: center;
 }
 
-.calculator__input--legend {
-  color: #ff0000;
-  font-size: 1.5em;
+.content__calculator__legend {
+  color: #991F00;
+  font-size: 1.7em;
+  font-weight: bolder;
+  margin: 10px;
 }
 
-.content__calculator--text {
-  color: #000000;
+.content__calculator__text {
   font-size: 1.5em;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.content__calculator__button {
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 20px;
 }
