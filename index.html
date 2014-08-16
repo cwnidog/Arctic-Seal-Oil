@@ -1,0 +1,37 @@
+<!DOCTYPE = html>
+<html>
+  <head>
+    <title>Arctic Seal Oil Company</title>
+    <link rel="stylesheet" href="styles/base.css" type="text/css">
+    <link rel="stylesheet" href="styles/layout.css" type="text/css">
+    <link rel="stylesheet" href="styles/module.css" type="text/css">
+    <link rel="stylesheet" href="styles/states.css" type="text/css">
+  </head>
+  <body>
+    <header class=" container_12 banner__container">
+        <img class="grid_6 banner__img" src="images/logo.png">
+        <h1 role="heading" class="grid_6 banner__h1">Arctic Seal Oil Company</h1>
+        <nav>
+          <a href="index.html" class="grid_2 banner__link">Home</a>
+          <a href="order.html" class="grid_2 banner__link">Order</a>
+          <a href="about_us.html" class=" grid_2 banner__link">About Us</a>
+        </nav>
+    </header>
+
+    <main class="container_12 content">
+      <form action="index.html" class="grid_5 content__calculator" id="calculator-input" method="get">
+        <fieldset>
+          <legend class="calculator__input--legend">Last Change Information: </legend>
+          <p class="content__calculator--text">Last Change Date: <input type="text" id ="last-change-date"></p>
+          <p class="content__calculator--text">Last Change Miles: <input type="text" id ="last-change-miles"></p>
+          <p class="content__calculator--synth">Synthetic Oil: <input type="checkbox" id ="last-change-synth"></p>
+        </fieldset>
+      </form>
+      <form action="index.html" class="grid_5 content__calculator" id="calculator-output" method="post">
+        <p class="content__calculator--text">Last Change Date: <input type="text" id ="last-change-date"></p>
+        <p class="content__calculator--text">Last Change Miles: <input type="text" id ="last-change-miles"></p>
+      </form>
+
+    </main>
+  </body>
+</html>
