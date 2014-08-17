@@ -1,6 +1,9 @@
-var lastMi;
-var lastDate;
+var lastMi = document.getElementById('last-change-miles');
+var lastDate = document.getElementById('last-change-date');
 var synthetic;
+
+lastMi.value = "Enter Mileage";
+lastDate.value = "MM/YYYY";
 
 var nextMi = document.getElementById('next-change-miles');
 var nextDate = document.getElementById('next-change-date');
@@ -18,20 +21,30 @@ function getInput () {
   synthetic = document.getElementById('last-change-synth').checked;
 }
 
-function getNextDate () {
+function getNextDate (monthsToChange) {
 
+  var month = parseInt(lastDate.slice(0, 2));
+  var year = parseInt(lastDate.slice(3));
 
+  month += monthsToChange;
+
+  if(month > 12) {
+    year++;
+    month = month % 12;
+  }
+
+  nextDate.value = month + "/" + year;
 }
 
-function getNextMi() {
+function getNextChange() {
 
   if (synthetic) {
     nextMi.value = lastMi + 10000;
-    getNextDate();
+    getNextDate(9);
   }
   else {
     nextMi.value = lastMi + 5000;
-    getNextDate();
+    getNextDate(6);
   }
 }
 
@@ -39,7 +52,7 @@ function oilCalculation () {
 
   getInput();
 
-  getNextMi();
+  getNextChange();
 
 }
 
