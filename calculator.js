@@ -1,6 +1,7 @@
 var lastMi = document.getElementById('last-change-miles');
 var lastDate = document.getElementById('last-change-date');
 var synthetic;
+var errorMessage = document.getElementById('input-error');
 
 lastMi.value = "Enter Mileage";
 lastDate.value = "MM/YYYY";
@@ -13,6 +14,20 @@ var elSchedBtn = document.getElementById('schedule');
 
 elCalcBtn.addEventListener('click', oilCalculation, false);
 elSchedBtn.addEventListener('click', scheduleChange, false);
+
+lastMi.addEventListener('blur', inputCheck(lastMi), false);
+lastDate.addEventListener('blur', inputCheck(lastDate), false);
+
+function inputCheck (elCheck) {
+
+  if (elCheck.value === "Enter Mileage" || elCheck.value === "MM/YYYY") {
+    errorMessage.innerHTML = 'Please fill out entire form.';
+
+  }
+  else {
+    errorMessage.innerHTML = '';
+  }
+}
 
 function getInput () {
 
