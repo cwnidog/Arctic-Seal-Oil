@@ -1,8 +1,9 @@
-var lastMi = document.getElementById('last-change-miles').value;
-var lastDate = document.getElementById('last-change-date').value;
-var synthetic = document.getElementById('last-change-synth').checked;
-var nextMi = document.getElementById('next-change-miles').value;
-var nextDate = document.getElementById('next-change-date').value;
+var lastMi;
+var lastDate;
+var synthetic;
+
+var nextMi = document.getElementById('next-change-miles');
+var nextDate = document.getElementById('next-change-date');
 
 var elCalcBtn = document.getElementById('calculate');
 var elSchedBtn = document.getElementById('schedule');
@@ -10,16 +11,36 @@ var elSchedBtn = document.getElementById('schedule');
 elCalcBtn.addEventListener('click', oilCalculation, false);
 elSchedBtn.addEventListener('click', scheduleChange, false);
 
-function oilCalculation () {
+function getInput () {
+
+  lastMi = parseInt(document.getElementById('last-change-miles').value);
+  lastDate = document.getElementById('last-change-date').value;
+  synthetic = document.getElementById('last-change-synth').checked;
+}
+
+function getNextDate () {
+
+
+}
+
+function getNextMi() {
 
   if (synthetic) {
-    nextMi = lastMi + 10000;
-    nextDate = lastDate;
+    nextMi.value = lastMi + 10000;
+    getNextDate();
   }
   else {
-    nextMi = lastMi + 5000;
-    nextDate = lastDate;
+    nextMi.value = lastMi + 5000;
+    getNextDate();
   }
+}
+
+function oilCalculation () {
+
+  getInput();
+
+  getNextMi();
+
 }
 
 function scheduleChange () {
