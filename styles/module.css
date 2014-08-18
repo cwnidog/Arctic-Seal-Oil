@@ -101,6 +101,11 @@ body {
   margin-top: 15px;
 }
 
+.merch{
+  width: 200px;
+  margin-left: 10px
+}
+
 .figure__figcaption--founder {
   color: #ffffcc;
   font-size: 1.3em;
@@ -123,4 +128,11 @@ body {
   margin-left: 20px;
   margin-top: 20px;
   text-indent: 20px;
+}
+
+.price {
+  text-align: right;
+  color: #991F00;
+  font-weight: bold;
+
 }
