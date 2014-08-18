@@ -46,6 +46,14 @@ body {
   font-color: #000000;
 }
 
+.content__merch {
+  height: 1200px;
+  background-color: #123752;
+  border: 1px solid #000000;
+  border-radius: 0px;
+  font-color: #000000;
+}
+
 .content__text {
   background-color: #486F88;
   border: 1px solid #000000;
