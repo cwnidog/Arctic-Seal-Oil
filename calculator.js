@@ -2,6 +2,7 @@ var lastMi = document.getElementById('last-change-miles');
 var lastDate = document.getElementById('last-change-date');
 var synthetic;
 var errorMessage = document.getElementById('input-error');
+var overdueMessage = document.getElementById('overdue');
 
 lastMi.value = "Enter Mileage";
 lastDate.value = "MM/YYYY";
@@ -13,16 +14,16 @@ var elCalcBtn = document.getElementById('calculate');
 var elSchedBtn = document.getElementById('schedule');
 
 elCalcBtn.addEventListener('click', oilCalculation, false);
-elSchedBtn.addEventListener('click', scheduleChange, false);
+elSchedBtn.addEventListener('click', function(){location.href='order.html';},
+  false);
 
-lastMi.addEventListener('blur', inputCheck(lastMi), false);
-lastDate.addEventListener('blur', inputCheck(lastDate), false);
+lastMi.addEventListener('blur', inputCheck, false);
+lastDate.addEventListener('blur', inputCheck, false);
 
-function inputCheck (elCheck) {
+function inputCheck () {
 
-  if (elCheck.value === "Enter Mileage" || elCheck.value === "MM/YYYY") {
+  if (lastMi.value == "Enter Mileage" || lastDate.value == "MM/YYYY") {
     errorMessage.innerHTML = 'Please fill out entire form.';
-
   }
   else {
     errorMessage.innerHTML = '';
@@ -48,6 +49,10 @@ function getNextDate (monthsToChange) {
     month = month % 12;
   }
 
+  if (year < 2014 || (year == 2014 && month < 8)) {
+    overdueMessage.innerHTML = 'OVERDUE FOR OIL CHANGE';
+  }
+
   nextDate.value = month + "/" + year;
 }
 
@@ -68,10 +73,5 @@ function oilCalculation () {
   getInput();
 
   getNextChange();
-
-}
-
-function scheduleChange () {
-
 
 }

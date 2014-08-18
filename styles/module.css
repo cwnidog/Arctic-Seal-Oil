@@ -82,6 +82,13 @@ body {
   margin: 10px;
 }
 
+.content__calculator__text--urgent {
+  color: #991F00;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 10px;
+}
+
 .content__calculator__button {
   font-size: 1.5em;
   font-weight: bold;
